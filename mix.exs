@@ -1,7 +1,7 @@
 defmodule BcInvestiments.MixProject do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
   @github "https://github.com/AnderLuiz/bc_investiments"
 
   def project do
@@ -62,7 +62,7 @@ defmodule BcInvestiments.MixProject do
       {:mock, "~> 0.3.0", only: [:test]},
       {:floki, "~> 0.20.0"},
       {:html5ever, "~> 0.5.0"},
-      {:httpoison, "~> 0.9.0"},
+      {:httpoison, ">= 0.9.0"},
     ]
   end
 
