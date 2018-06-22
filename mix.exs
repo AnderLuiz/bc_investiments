@@ -1,7 +1,7 @@
 defmodule BcInvestiments.MixProject do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
   @github "https://github.com/AnderLuiz/bc_investiments"
 
   def project do

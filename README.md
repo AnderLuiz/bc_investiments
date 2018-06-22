@@ -37,7 +37,10 @@ Instale o rust.
 ```
 curl https://sh.rustup.rs -sSf | sh
 
+mix deps.get
 ```
+
+Adicione a dependencia:
 
 ```elixir
 def deps do
@@ -45,4 +48,15 @@ def deps do
     {:bc_investiments, "~> 0.3.0"}
   ]
 end
+```
+
+Adicione a configuração do parser ao seu 'config.exs'
+```
+config :floki, :html_parser, Floki.HTMLParser.Html5ever
+```
+
+
+```
+cd deps/html5ever/native/html5ever_nif/
+cargo update
 ```
