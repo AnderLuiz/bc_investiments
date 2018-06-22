@@ -58,7 +58,8 @@ defmodule BcInvestiments.MixProject do
   defp deps do
     [
       {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.13", only: [:dev]},
+      {:ex_doc, ">= 0.0.0", only: [:dev]},
+      {:inch_ex, only: [:docs]},
       {:mock, "~> 0.3.0", only: [:test]},
       {:floki, "~> 0.20.0"},
       {:html5ever, "~> 0.5.0"},

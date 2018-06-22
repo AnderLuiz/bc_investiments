@@ -1,6 +1,10 @@
 defmodule BcInvestiments.Rates.Ipca do
   defstruct last_12_months_rate: nil
 
+  @moduledoc """
+    Representação do IPCA
+  """
+
   @type t :: %__MODULE__{
             last_12_months_rate: float | nil
   }

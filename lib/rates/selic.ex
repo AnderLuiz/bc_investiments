@@ -3,12 +3,16 @@ defmodule BcInvestiments.Rates.Selic do
             daily_rate: nil,
             date: false
 
+  @moduledoc """
+    Representação da taxa SELIC
+  """
+
   @type t :: %__MODULE__{
             rate: float | nil,
             daily_rate: float | nil,
             date: Date.t
   }
-
+  
   @spec new(float, float, Date.t) :: t
   def new(rate, daily_rate, date) do
     %__MODULE__{
