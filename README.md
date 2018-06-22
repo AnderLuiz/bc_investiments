@@ -4,7 +4,7 @@ Simples biblioteca para obter os dados das taxas brasileiras. Atualmente, selic,
 
 [![Hex.pm](https://img.shields.io/hexpm/v/bc_investiments.svg?style=plastic)](https://hex.pm/packages/bc_investiments)
 [![Travis](https://img.shields.io/travis/AnderLuiz/bc_investiments.svg?style=plastic)](https://travis-ci.org/AnderLuiz/bc_investiments)
-
+[![Inline docs](http://inch-ci.org/github/anderluiz/bc_investiments.svg)](http://inch-ci.org/github/anderluiz/bc_investiments)
 
 # Uso
 
