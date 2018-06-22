@@ -2,6 +2,7 @@
 
 Simples biblioteca para obter os dados das taxas brasileiras. Atualmente, selic, ipca e poupança.
 
+[![Travis](https://img.shields.io/travis/AnderLuiz/bc_investiments.svg?style=plastic)](https://travis-ci.org/AnderLuiz/bc_investiments)
 
 
 # Uso
