@@ -23,7 +23,6 @@ defmodule BcInvestiments.PoupancaMock do
          {"Connection", "close"},
          {"Transfer-Encoding", "chunked"}
        ],
-       request_url: "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/poupanca",
        status_code: 200
      }
   end
@@ -39,7 +38,6 @@ defmodule BcInvestiments.PoupancaMock do
          {"Connection", "close"},
          {"Transfer-Encoding", "chunked"}
        ],
-       request_url: "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/poupanca",
        status_code: 200
      }
   end
@@ -55,7 +53,6 @@ defmodule BcInvestiments.PoupancaMock do
          {"Connection", "close"},
          {"Transfer-Encoding", "chunked"}
        ],
-       request_url: "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/poupanca",
        status_code: 500
     }
   end
