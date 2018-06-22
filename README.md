@@ -2,6 +2,7 @@
 
 Simples biblioteca para obter os dados das taxas brasileiras. Atualmente, selic, ipca e poupança.
 
+[![Hex.pm](https://img.shields.io/hexpm/v/bc_investiments.svg?style=plastic)](https://hex.pm/packages/bc_investiments)
 [![Travis](https://img.shields.io/travis/AnderLuiz/bc_investiments.svg?style=plastic)](https://travis-ci.org/AnderLuiz/bc_investiments)
 
 
@@ -40,21 +41,22 @@ curl https://sh.rustup.rs -sSf | sh
 mix deps.get
 ```
 
+Adicione a configuração do parser ao seu 'config.exs'
+```elixir
+config :floki, :html_parser, Floki.HTMLParser.Html5ever
+```
+
 Adicione a dependencia:
 
 ```elixir
 def deps do
   [
-    {:bc_investiments, "~> 0.3.0"}
+    {:bc_investiments, "~> 0.3.1"}
   ]
 end
 ```
 
-Adicione a configuração do parser ao seu 'config.exs'
-```
-config :floki, :html_parser, Floki.HTMLParser.Html5ever
-```
-
+Em caso de erro ao compilar referente a dependencia html5ever, tente:
 
 ```
 cd deps/html5ever/native/html5ever_nif/
