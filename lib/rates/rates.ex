@@ -66,7 +66,7 @@ defmodule BcInvestiments.Rates do
     ## Exemplos
 
         iex> BcInvestiments.Rates.get_cdi()
-        {:ok, %Cdi{last_12_months_rate: 6.39}
+        {:ok, %Cdi{over: 6.39}
   """
   def get_cdi() do
     case HTTPoison.get "https://www.cetip.com.br/" do

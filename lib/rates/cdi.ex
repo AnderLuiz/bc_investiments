@@ -10,9 +10,9 @@ defmodule BcInvestiments.Rates.Cdi do
   }
 
   @spec new(float) :: t
-  def new(last_12_months_rate) do
+  def new(over) do
     %__MODULE__{
-      over: last_12_months_rate,
+      over: over,
     }
   end
 end
