@@ -1,5 +1,5 @@
 defmodule BcInvestiments.Rates do
-  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca}
+  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca, Cdi}
 
   @moduledoc """
     Taxas selic, ipca e poupança
@@ -60,6 +60,34 @@ defmodule BcInvestiments.Rates do
     end
   end
 
+  @doc """
+    Retorna o a taxa CDI atual
+
+    ## Exemplos
+
+        iex> BcInvestiments.Rates.get_cdi()
+        {:ok, %Cdi{last_12_months_rate: 6.39}
+  """
+  def get_cdi() do
+    case HTTPoison.get "https://www.cetip.com.br/" do
+      {:ok, %{body: html, status_code: 200} } ->
+          with spans <- Floki.find(html, "span"),
+               {"span",
+               [{"id", "ctl00_Banner_lblTaxDI"}],
+               [str_cdi]} <- Enum.find(spans, fn(element) ->
+                                             match?({"span", [{"id", "ctl00_Banner_lblTaxDI"}], [_]},element)
+                                           end),
+               {cdi,_} <- str_cdi
+                          |> String.replace(",",".")
+                          |> Float.parse
+          do
+            {:ok, Cdi.new(cdi)}
+          else
+            _ ->  {:error, :scraping}
+          end
+      _ -> {:error, :http}
+    end
+  end
 
   @doc """
     Retorna o a taxa de rendimento da poupança do site do banco central

@@ -4,8 +4,8 @@ defmodule BcInvestiments.RatesTest do
   import Mock
 
   alias BcInvestiments.Rates
-  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca}
-  alias BcInvestiments.{SelicMock, IpcaMock, PoupancaMock}
+  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca, Cdi}
+  alias BcInvestiments.{SelicMock, IpcaMock, PoupancaMock, CdiMock}
 
   describe "rates" do
     test "get selic successfully" do
@@ -59,6 +59,24 @@ defmodule BcInvestiments.RatesTest do
     test "not get poupanca with http error" do
       with_mock HTTPoison, [get: fn(params) -> PoupancaMock.get_error_response(params) end] do
         assert Rates.get_poupanca() === {:error, :http}
+      end
+    end
+
+    test "get cdi successfully" do
+      with_mock HTTPoison, [get: fn(params) -> CdiMock.get(params) end] do
+        assert Rates.get_cdi() === {:ok, %Cdi{over: 6.39}}
+      end
+    end
+
+    test "not get cdi with format error" do
+      with_mock HTTPoison, [get: fn(params) -> CdiMock.get_with_incorrect_format_response(params) end] do
+        assert Rates.get_cdi() === {:error, :scraping}
+      end
+    end
+
+    test "not get cdi with http error" do
+      with_mock HTTPoison, [get: fn(params) -> CdiMock.get_error_response(params) end] do
+        assert Rates.get_cdi() === {:error, :http}
       end
     end
   end

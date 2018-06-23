@@ -22,6 +22,13 @@ iex(1)> BcInvestiments.Rates.get_ipca()
 {:ok, %BcInvestiments.Rates.Ipca{last_12_months_rate: 2.86}}
 ```
 
+## CDI
+
+```elixir
+iex(1)> BcInvestiments.Rates.get_cdi()
+{:ok, %BcInvestiments.Rates.Cdi{over: 6.39}}
+```
+
 ## Poupança
 
 ```elixir
