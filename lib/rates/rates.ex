@@ -15,6 +15,7 @@ defmodule BcInvestiments.Rates do
         iex> BcInvestiments.Rates.get_selic()
         {:ok, %Selic{daily_rate: 6.4, date: ~D[2018-06-21], rate: 6.5}
   """
+  @spec get_selic() :: {:ok, Selic.t} | {:error, :scraping} | {:error, :http}
   def get_selic() do
     case HTTPoison.get "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/juros" do
       {:ok, %{body: html, status_code: 200} } ->
@@ -43,6 +44,7 @@ defmodule BcInvestiments.Rates do
         iex> BcInvestiments.Rates.get_ipca()
         {:ok, %Ipca{last_12_months_rate: 2.86}
   """
+  @spec get_ipca() :: {:ok, Ipca.t} | {:error, :scraping} | {:error, :http}
   def get_ipca() do
     case HTTPoison.get "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/inflacao" do
       {:ok, %{body: html, status_code: 200} } ->
@@ -68,6 +70,7 @@ defmodule BcInvestiments.Rates do
         iex> BcInvestiments.Rates.get_cdi()
         {:ok, %Cdi{over: 6.39}
   """
+  @spec get_cdi() :: {:ok, Cdi.t} | {:error, :scraping} | {:error, :http}
   def get_cdi() do
     case HTTPoison.get "https://www.cetip.com.br/" do
       {:ok, %{body: html, status_code: 200} } ->
@@ -97,6 +100,7 @@ defmodule BcInvestiments.Rates do
         iex> BcInvestiments.Rates.get_poupanca()
         {:ok, %Poupanca{monthly_rate: 0.3715}
   """
+  @spec get_poupanca() :: {:ok, Poupanca.t} | {:error, :scraping} | {:error, :http}
   def get_poupanca() do
     case HTTPoison.get "http://conteudo.bcb.gov.br/api/feed/pt-br/PAINEL_INDICADORES/poupanca" do
       {:ok, %{body: html, status_code: 200} } ->
