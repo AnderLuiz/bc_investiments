@@ -1,6 +1,6 @@
 # BcInvestiments
 
-Simples biblioteca para obter os dados das taxas brasileiras. Atualmente, selic, ipca e poupança.
+Simples biblioteca para obter os dados das taxas brasileiras. Atualmente, SELIC, IPCA, CDI e poupança.
 
 [![Hex.pm](https://img.shields.io/hexpm/v/bc_investiments.svg?style=plastic)](https://hex.pm/packages/bc_investiments)
 [![Travis](https://img.shields.io/travis/AnderLuiz/bc_investiments.svg?style=plastic)](https://travis-ci.org/AnderLuiz/bc_investiments)

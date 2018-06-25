@@ -2,7 +2,7 @@ defmodule BcInvestiments.Rates do
   alias BcInvestiments.Rates.{Selic, Ipca, Poupanca, Cdi}
 
   @moduledoc """
-    Taxas selic, ipca e poupança
+    Taxas selic, ipca, cdi e poupança
   """
 
 
