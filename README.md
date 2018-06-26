@@ -45,7 +45,6 @@ Instale o rust.
 ```
 curl https://sh.rustup.rs -sSf | sh
 
-mix deps.get
 ```
 
 Adicione a configuração do parser ao seu 'config.exs'
@@ -58,7 +57,7 @@ Adicione a dependencia:
 ```elixir
 def deps do
   [
-    {:bc_investiments, "~> 0.3.1"}
+    {:bc_investiments, "~> 0.3.5"}
   ]
 end
 ```

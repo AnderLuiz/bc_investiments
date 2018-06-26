@@ -1,7 +1,7 @@
 defmodule BcInvestiments.MixProject do
   use Mix.Project
 
-  @version "0.3.4"
+  @version "0.3.5"
   @github "https://github.com/AnderLuiz/bc_investiments"
 
   def project do
@@ -22,7 +22,7 @@ defmodule BcInvestiments.MixProject do
 
   defp description do
     """
-    Lib para obter as taxas selic, ipca e poupança
+    Lib para obter as taxas selic, cdi, ipca e poupança
     """
   end
 
@@ -57,6 +57,7 @@ defmodule BcInvestiments.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:credo, "~> 0.9.1", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
       {:ex_doc, ">= 0.0.0", only: [:dev]},
       {:inch_ex, only: [:docs]},

@@ -1,15 +1,19 @@
 defmodule BcInvestiments.SelicMock do
+  
+  @moduledoc """
+    Mock para testes das requests para obter a selic
+  """
 
   def get(_params) do
-    { :ok, successful_response() }
+    {:ok, successful_response()}
   end
 
   def get_with_incorrect_format_response(_params) do
-    { :ok, incorrect_format_response() }
+    {:ok, incorrect_format_response()}
   end
 
   def get_error_response(_params) do
-    { :ok, error_response() }
+    {:ok, error_response()}
   end
 
   defp successful_response() do
