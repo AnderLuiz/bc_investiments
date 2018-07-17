@@ -1,10 +1,9 @@
 defmodule BcInvestiments.Rates.Poupanca do
-  defstruct monthly_rate: nil
-
-
   @moduledoc """
     Representação do rendimento da poupança
   """
+  
+  defstruct monthly_rate: nil
 
   @type t :: %__MODULE__{
             monthly_rate: float | nil

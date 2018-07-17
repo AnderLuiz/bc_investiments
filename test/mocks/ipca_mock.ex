@@ -1,5 +1,4 @@
 defmodule BcInvestiments.IpcaMock do
-  
   @moduledoc """
     Mock para testes das requests para obter a taxa do IPCA
   """

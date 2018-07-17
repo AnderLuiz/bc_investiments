@@ -1,10 +1,10 @@
 defmodule BcInvestiments.Rates do
-  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca, Cdi}
-
   @moduledoc """
     Taxas selic, ipca, cdi e poupança
   """
-  
+
+  alias BcInvestiments.Rates.{Selic, Ipca, Poupanca, Cdi}
+
   @doc """
     Retorna a taxa selic do site do banco central
 
@@ -23,9 +23,9 @@ defmodule BcInvestiments.Rates do
                                   |> Floki.text()
                                   |> String.replace(",", ".")
                                   |> Float.parse(),
-               {daily_rate_selic, _} <-  daily_rate_div   
-                                          |> Floki.text() 
-                                          |> String.replace(",", ".") 
+               {daily_rate_selic, _} <-  daily_rate_div
+                                          |> Floki.text()
+                                          |> String.replace(",", ".")
                                           |> Float.parse(),
                str_date = Floki.text(date_div),
                date = Date.from_iso8601!("#{String.slice(str_date,6,4)}-#{String.slice(str_date,3,2)}-#{String.slice(str_date,0,2)}")

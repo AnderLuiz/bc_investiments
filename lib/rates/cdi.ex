@@ -1,9 +1,9 @@
 defmodule BcInvestiments.Rates.Cdi do
-  defstruct over: nil
-
   @moduledoc """
     Representação do CDI
   """
+  
+  defstruct over: nil
 
   @type t :: %__MODULE__{
             over: float | nil

@@ -1,5 +1,4 @@
 defmodule BcInvestiments.SelicMock do
-  
   @moduledoc """
     Mock para testes das requests para obter a selic
   """
